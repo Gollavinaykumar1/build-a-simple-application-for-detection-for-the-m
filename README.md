@@ -6,9 +6,10 @@
 build a simple application for detection for the malware
 
 ## Generated Files
-- `docker-compose.yml`
-- `Dockerfile`
-- `.github/workflows/deploy.yml`
+- `file_1.py`
+- `file_2.py`
+- `file_3.py`
+- `file_4.py`
 
 ## How to Run
 ```bash
