@@ -1,0 +1,23 @@
+name: Deploy to Render
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Login to Render
+        uses: renderinc/render-github-actions@v1
+        with:
+          render-token: ${{ secrets.RENDER_TOKEN }}
+      - name: Deploy to Render
+        uses: renderinc/render-github-actions@v1
+        with:
+          render-token: ${{ secrets.RENDER_TOKEN }}
+          render-service: ${{ secrets.RENDER_SERVICE }}
+          render-env: ${{ secrets.RENDER_ENV }}
+          working-directory: .
+          docker-compose-file: docker-compose.yml
